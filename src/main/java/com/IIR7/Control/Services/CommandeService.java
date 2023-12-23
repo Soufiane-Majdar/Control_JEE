@@ -9,5 +9,6 @@ public interface CommandeService {
      Commande AddCommande(Commande commande) ;
      Commande update(Long id, Commande commande);
      void delete(Long id);
+     List<Commande> getLatestCommands();
      List<Commande> listerCommandes();
 }

@@ -50,4 +50,10 @@ public class RestController {
         commandeIMPL.delete(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+    @GetMapping("/thelast")
+    public ResponseEntity<List<Commande>> obtenirDernieresCommandes() {
+        List<Commande> dernieresCommandes = commandeIMPL.getLatestCommands();
+        return new ResponseEntity<>(dernieresCommandes, HttpStatus.OK);
+    }
+
 }
